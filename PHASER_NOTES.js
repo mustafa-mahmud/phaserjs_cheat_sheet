@@ -43,6 +43,9 @@ let pipes = this.physics.add.group();
 pipes.create(0, 0, 'pipe').setOrigin(0, 1);
 pipes.create(0, 0, 'pipe').setOrigin(0);
 
+/* stop pipe move option top-bottom */
+pipes.setImmovable(true);
+
 //**get all objects from group===============================
 pipes.getChildren().forEach((pipe) => {});
 
@@ -136,12 +139,6 @@ this.timedEvent.remove();
 
 //** resume physics======================= */
 this.physics.resume();
-
-//** preload spritesheet in preload() method */
-this.load.spritesheet('bird', 'assets/birdSprite.png', {
-  frameWidth: 16,
-  frameHeight: 16,
-});
 
 //** add event on full canvas============ */
 this.input.on('pointerdown', callback);
