@@ -61,6 +61,9 @@ this.physics.add.collider(this.bird, this.pipes, this.gameOver, null, this);
 //**collide with boundary=============================
 this.bird.setCollideWorldBounds(true); //write it in create() method
 
+/* setTing use for change object color */
+this.bird.setTint(0xff0000);
+
 //**setTimeout()/setInterval() alternative method==================
 this.time.addEvent({
   delay: 1000,
@@ -177,3 +180,6 @@ this.bird.setBodySize(16, 10);
 
 /* ** change cursor  */
 this.add.image.setInteractive({ cursor: 'pointer' });
+
+/* remove setInteractive() */
+this.add.image.removeInteractive({ cursor: 'pointer' });
